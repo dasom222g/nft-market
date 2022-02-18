@@ -17,6 +17,24 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_animalTokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "SaleForAnimalToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "mintAnimalTokenAddress",
 				"outputs": [
@@ -24,6 +42,25 @@
 						"internalType": "contract MintAnimalToken",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "onSaleAnimalTokenIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -43,7 +80,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"localhost/SaleAnimalToken.sol": "SaleAnimalToken"
+			"SaleAnimalToken.sol": "SaleAnimalToken"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -145,7 +182,7 @@
 				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
 			]
 		},
-		"localhost/MintAnimalToken.sol": {
+		"MintAnimalToken.sol": {
 			"keccak256": "0x20e20dda9655a353c888f41e4810c17a54b7f22ddb570abe8ac7e3f6cc1dfc52",
 			"license": "MIT",
 			"urls": [
@@ -153,12 +190,12 @@
 				"dweb:/ipfs/QmWwy9ucqNXKmJQSRW2vP6pbp54Qo6vgdT7Z3F1cvroRWK"
 			]
 		},
-		"localhost/SaleAnimalToken.sol": {
-			"keccak256": "0xd938c9daf48f807cacbe478ea3289644bb5f6013725d3c471b22243851b1c8b4",
+		"SaleAnimalToken.sol": {
+			"keccak256": "0x347b362f3db61e82525c27dcb74320eab5afc744039456afa2b18acb42b16c7e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f06080b839976899c60c6d720b8ded3d01fd4172c40a8429c05b97117e71f634",
-				"dweb:/ipfs/QmSoFPU6y27BGqmw8B13bHQpjLC5V3EJY2wzZUjKAfmdR7"
+				"bzz-raw://f78e25f3b336dda3316b29630b66d178d85df69f10b383a08acffa3669f14b8c",
+				"dweb:/ipfs/QmfDaikuPofEzgUHt28Jb2oT2BnqgSPmoWf6SJ4DkJkNpp"
 			]
 		}
 	},
