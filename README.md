@@ -8,7 +8,7 @@ Now clone this repository to your own device. Click the Clone or download button
 
 Open a terminal and run the following Git command:
 
-    $ git clone https://github.com/dasom222g/nft-market-contract.git
+    $ git clone https://github.com/dasom222g/nftMarket-contract.git
     
 Getting start
 
