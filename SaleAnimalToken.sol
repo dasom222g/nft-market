@@ -15,7 +15,7 @@ contract SaleAnimalToken {
     uint256[] public onSaleAnimalTokenIds;
 
     // 판매
-    function SaleForAnimalToken(uint256 _animalTokenId, uint256 _price) public {
+    function saleForAnimalToken(uint256 _animalTokenId, uint256 _price) public {
         address owner = mintAnimalTokenAddress.ownerOf(_animalTokenId);
         // 1. 소유권자가 현재 함수를 호출한 사람인지 확인
         // 2. 가격은 0이상으로 책정되어야 함
@@ -64,10 +64,10 @@ contract SaleAnimalToken {
         }
     }
 
-    function getOnSaleAnimalTokenIds() public view returns (uint256) {
+    function getOnSaleAnimalTokenLength() public view returns (uint256) {
         return onSaleAnimalTokenIds.length;
     }
-    function getOnSaleAnimalTokenPrice(uint256 _animalTokenId) public view returns(uint256) {
+    function getAnimalTokenPrice(uint256 _animalTokenId) public view returns(uint256) {
         return priceMap[_animalTokenId];
     }
 }
