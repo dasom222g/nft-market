@@ -16,7 +16,6 @@ contract MintAnimalToken is ERC721Enumerable {
         uint256 animalPrice;
     }
 
-    // AnimalTokenData[] public animalTokenDatas;
     SaleAnimalToken public saleAnimalTokenContract;
 
     function mintAnimalToken() public {
