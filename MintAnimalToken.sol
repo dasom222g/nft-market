@@ -34,12 +34,12 @@ contract MintAnimalToken is ERC721Enumerable {
     }
 
     function getAnimalTokenList(address _owner) view public returns(AnimalTokenData[] memory) {
-        uint mintingCount = balanceOf(_owner);
-        require(mintingCount != 0, "Owner did not animalToken"); // minting한 카드가 없는경우
+        uint mintCount = balanceOf(_owner);
+        require(mintCount != 0, "Owner did not animalToken"); // minting한 카드가 없는경우
 
-        // mintingCount사이즈의 배열, new키워드로 선언되는 배열은 모두 메모리배열
-        AnimalTokenData[] memory animalTokenDatas = new AnimalTokenData[](mintingCount);
-        for(uint i = 0; i < mintingCount; i++) {
+        // mintCount사이즈의 배열, new키워드로 선언되는 배열은 모두 메모리배열
+        AnimalTokenData[] memory animalTokenDatas = new AnimalTokenData[](mintCount);
+        for(uint i = 0; i < mintCount; i++) {
             uint256 animalTokenId = tokenOfOwnerByIndex(_owner, i);
             uint256 animalType = animalTypeMap[animalTokenId];
             uint256 animalPrice = saleAnimalTokenContract.getAnimalTokenPrice(animalTokenId);
