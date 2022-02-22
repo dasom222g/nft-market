@@ -13,10 +13,11 @@ contract SaleAnimalToken {
 
     mapping(uint256 => uint256) priceMap;
     uint256[] public onSaleAnimalTokenIds;
-    struct AnimalTokenData {
+    struct OnsaleAnimalTokenData {
         uint256 animalTokenId;
         uint256 animalType;
         uint256 animalPrice;
+        address owner;
     }
 
     // 판매
@@ -72,14 +73,19 @@ contract SaleAnimalToken {
     function getOnSaleAnimalTokenLength() public view returns (uint256) {
         return onSaleAnimalTokenIds.length;
     }
-    function getOnSaleAnimalToken(address _owner) view public returns(AnimalTokenData[] memory) {
-        AnimalTokenData[] memory onSaleAnimalTokenDatas = new AnimalTokenData[](onSaleAnimalTokenIds.length);
+
+    // 판매중인 모든 토큰
+    function getOnSaleAnimalTokenList() view public returns(OnsaleAnimalTokenData[] memory) {
+        OnsaleAnimalTokenData[] memory onSaleAnimalTokenDatas = new OnsaleAnimalTokenData[](onSaleAnimalTokenIds.length);
+        
+        // onSaleAnimalTokenIds.length가 0일경우 빈배열 리턴됨
         for (uint i = 0; i < onSaleAnimalTokenIds.length; i++) {
-            uint256 animalTokenId = mintAnimalTokenAddress.tokenOfOwnerByIndex(_owner, i);
+            uint256 animalTokenId = mintAnimalTokenAddress.tokenByIndex(i);
             // another contract의 mapping에 접근할땐 []대신 ()로 value값에 접근
             uint256 animalType = mintAnimalTokenAddress.animalTypeMap(animalTokenId);
             uint256 animalPrice = getAnimalTokenPrice(animalTokenId);
-            onSaleAnimalTokenDatas[i] = AnimalTokenData(animalTokenId, animalType, animalPrice);
+            address owner = mintAnimalTokenAddress.ownerOf(animalTokenId);
+            onSaleAnimalTokenDatas[i] = OnsaleAnimalTokenData(animalTokenId, animalType, animalPrice, owner);
         }
         return onSaleAnimalTokenDatas;
     }
