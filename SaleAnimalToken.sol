@@ -80,7 +80,7 @@ contract SaleAnimalToken {
         
         // onSaleAnimalTokenIds.length가 0일경우 빈배열 리턴됨
         for (uint i = 0; i < onSaleAnimalTokenIds.length; i++) {
-            uint256 animalTokenId = mintAnimalTokenAddress.tokenByIndex(i);
+            uint256 animalTokenId = onSaleAnimalTokenIds[i];
             // another contract의 mapping에 접근할땐 []대신 ()로 value값에 접근
             uint256 animalType = mintAnimalTokenAddress.animalTypeMap(animalTokenId);
             uint256 animalPrice = getAnimalTokenPrice(animalTokenId);
